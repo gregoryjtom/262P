@@ -3,6 +3,8 @@ import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.*;
 import java.util.regex.*;
 
+// The shared, mutable data:
+
 class WordCounter {
   public static void main(String[] args) {
     ArrayList<String> stop_words = loadStopWords();

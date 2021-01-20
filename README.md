@@ -4,7 +4,9 @@
 
 1. Go to shell, and navigate to WeekX folder, where X = week of project: `cd WeekX`
 2. Compile java file: `javac WordCounter.java`
-3. Run java file: `java WordCounter`
+3. Run java file: `java WordCounter ../pride-and-prejudice.txt`
+
+Note: for week 1, I accidentally moved some stuff while copy and pasting to week 2, so the time-stamp might show a later time-stamp, but I hope you trust me that I didn't make any changes haha. You can check the time-stamp on the WordCounter.class for proof. Thanks!
 
 *General:*
 
