@@ -1,8 +1,8 @@
 **REPOSITORY GUIDELINES**
 
-*To run weekly assignments:*
+*Week 1*
 
-1. Go to shell, and navigate to WeekX folder, where X = week of project: `cd WeekX`
+1. Go to shell, and navigate to Week1 folder: `cd Week1`
 2. Compile java file: `javac WordCounter.java`
 3. Run java file: `java WordCounter ../pride-and-prejudice.txt`
 

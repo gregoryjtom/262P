@@ -3,21 +3,14 @@ import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.*;
 import java.util.regex.*;
 
-class Five {
-  // The shared, mutable data:
-  private ArrayList<String> stop_words = new ArrayList<>();
-  private HashMap<String,Integer> frequencies = new HashMap<>();
-  private ArrayList<Map.Entry<String,Integer>> freq_list = new ArrayList<>();
-
+class Six {
   public static void main(String[] args) {
-    Five f = new Five();
-    f.loadStopWords();
-    f.countWordsInFile(args[0]);
-    f.sortFrequencies();
-    f.printTop25();
+    Six s = new Six();
+    s.printTop25(s.sortFrequencies(s.countWordsInFile(args[0],s.loadStopWords())));
   }
 
-  private void loadStopWords() {
+  private ArrayList<String> loadStopWords() {
+    ArrayList<String> stop_words = new ArrayList<String>();
     try {
       // load stop words file
       File stop_words_file = new File("../stop_words.txt");
@@ -38,9 +31,12 @@ class Five {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
+    return stop_words;
   }
 
-  private void countWordsInFile(String filepath) {
+  private HashMap<String, Integer> countWordsInFile(String filepath, ArrayList<String> stop_words) {
+    // make HashMap for frequencies
+    HashMap<String, Integer> frequencies = new HashMap<String, Integer>();
     try {
       // analyze text file line by line
       File text_file = new File(filepath);
@@ -66,9 +62,13 @@ class Five {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
+    return frequencies;
   }
 
-  private void sortFrequencies(){
+  private ArrayList<Map.Entry<String,Integer>> sortFrequencies(HashMap<String,Integer> frequencies){
+    // create ArrayList to store sorted list
+    ArrayList<Map.Entry<String,Integer>> freq_list = new ArrayList<>();
+
     // put all HashMap entries into freq_list
     for(Map.Entry<String, Integer> e: frequencies.entrySet()) 
     {
@@ -90,9 +90,10 @@ class Five {
 
     // sort and return
     Collections.sort(freq_list,myComparator);
+    return freq_list;
   }
-  
-  private void printTop25(){
+
+  private void printTop25(ArrayList<Map.Entry<String,Integer>> freq_list){
     // print 25 most frequent entries
     System.out.println("----TOP 25 WORDS----");
     int i = 1;
