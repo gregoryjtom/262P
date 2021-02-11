@@ -1,5 +1,5 @@
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -13,7 +13,6 @@ public class Framework {
         URL classUrl = null;
 
         // get configuration
-        InputStream inputStream;
         String pathToJar = "";
         String nameOfWordClass = "";
         String nameOfFreqClass = "";
@@ -21,10 +20,10 @@ public class Framework {
             Properties prop = new Properties();
             String propFileName = "config.properties";
 
-            inputStream = Framework.class.getClassLoader().getResourceAsStream(propFileName);
+            FileInputStream ip= new FileInputStream(propFileName);
 
-            if (inputStream != null) {
-                prop.load(inputStream);
+            if (ip != null) {
+                prop.load(ip);
             } else {
                 throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
             }
@@ -33,7 +32,7 @@ public class Framework {
             pathToJar = prop.getProperty("pathToJar");
             nameOfWordClass = prop.getProperty("nameOfWordClass");
             nameOfFreqClass = prop.getProperty("nameOfFreqClass");
-            inputStream.close();
+            ip.close();
         } catch (Exception e) {
             System.out.println("Exception: " + e);
         }
