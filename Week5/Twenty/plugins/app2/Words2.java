@@ -2,20 +2,19 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class Words1 implements Week5Words{
+public class Words2 implements Week5Words{
+    public Words2(){}
+    
     public ArrayList<String> extract_words(String filepath){
-        ArrayList<String> stop_words = loadStopWords();
-        ArrayList<String> filtered_words = filterWordsInFile(filepath,stop_words);
-        return filtered_words;
-    }
-
-    private ArrayList<String> loadStopWords() {
         ArrayList<String> stop_words = new ArrayList<>();
+        ArrayList<String> filtered_words = new ArrayList<>();
+
         try {
             // load stop words file
-            File stop_words_file = new File("../stop_words.txt");
+            File stop_words_file = new File("../../stop_words.txt");
             Scanner myReader = new Scanner(stop_words_file);
             String list = "";
             // read the one line into a string and split
@@ -33,11 +32,7 @@ public class Words1 implements Week5Words{
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        return stop_words;
-    }
 
-    private ArrayList<String> filterWordsInFile(String filepath, ArrayList<String> stop_words) {
-        ArrayList<String> filtered_words = new ArrayList<>();
         try {
             // analyze text file line by line
             File text_file = new File(filepath);

@@ -1,13 +1,13 @@
 To run Seventeen:
 
-1. Go to shell, and navigate to Week4 folder: `cd Week5`
+1. Go to shell, and navigate to Week5 folder: `cd Week5`
 2. Compile java file of interest: `javac Seventeen.java`
 3. Run java file: `java Seventeen ../pride-and-prejudice.txt`
 
 To run Twenty:
 
-1. Go to shell, and navigate to Week4 folder: `cd Week5/Twenty`
-2. Execute jar file `java -jar framework.jar ../pride-and-prejudice.txt`
+1. Go to shell, and navigate to Week5 folder: `cd Week5/Twenty`
+2. Execute jar file `java -jar framework.jar ../../pride-and-prejudice.txt`
 
 Sources:
 - Reading files: https://www.w3schools.com/java/java_files_read.asp

@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class Frequencies2 implements Week5Frequencies{
+    public Frequencies2(){}
+    
     public ArrayList<Map.Entry<String,Integer>> top25(ArrayList<String> word_list){
         WordFrequencyController wfController = new WordFrequencyController();
         ArrayList<Map.Entry<String,Integer>> top25_list = null;
@@ -76,7 +78,7 @@ public class Frequencies2 implements Week5Frequencies{
 
             // sort and return
             Collections.sort(freq_list,myComparator);
-            ArrayList<Map.Entry<String,Integer>> top25_list = (ArrayList<Map.Entry<String, Integer>>) freq_list.subList(0,25);
+            ArrayList<Map.Entry<String,Integer>> top25_list = new ArrayList<>(freq_list.subList(0,25));
             return top25_list;
         }
     }

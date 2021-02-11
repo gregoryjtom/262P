@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class Frequencies1 implements Week5Frequencies{
+    public Frequencies1(){}
+
     public ArrayList<Map.Entry<String,Integer>> top25(ArrayList<String> word_list){
         HashMap<String,Integer> frequencies = new HashMap<>();
         ArrayList<Map.Entry<String,Integer>> freq_list = new ArrayList<>();
@@ -34,7 +36,7 @@ public class Frequencies1 implements Week5Frequencies{
             }
         };
         Collections.sort(freq_list,myComparator);
-        ArrayList<Map.Entry<String,Integer>> top25_list = (ArrayList<Map.Entry<String, Integer>>) freq_list.subList(0,25);
+        ArrayList<Map.Entry<String,Integer>> top25_list = new ArrayList<>(freq_list.subList(0,25));
         return top25_list;
     }
 }
