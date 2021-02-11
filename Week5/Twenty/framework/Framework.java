@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -39,7 +40,7 @@ public class Framework {
 
         try{
             // find classes in jar file in config
-            classUrl = new URL(pathToJar);
+            classUrl = new File(pathToJar).toURI().toURL();
         } catch (Exception e) {
             e.printStackTrace();
         }
