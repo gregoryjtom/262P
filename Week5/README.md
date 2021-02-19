@@ -9,6 +9,19 @@ To run Twenty:
 1. Go to shell, and navigate to Week5 folder: `cd Week5/Twenty`
 2. Execute jar file `java -jar framework.jar ../../pride-and-prejudice.txt`
 
+Note: the two ways to run are by modifying `config.properties` to have one of the following configurations:
+
+1. ```
+pathToJar=app1.jar  
+nameOfWordClass=Words1
+nameOfFreqClass=Frequencies1
+
+2. ```
+pathToJar=app2.jar
+nameOfWordClass=Words2
+nameOfFreqClass=Frequencies2
+
+
 Sources:
 - Reading files: https://www.w3schools.com/java/java_files_read.asp
 - Sorting hashmap: https://www.educative.io/edpresso/how-to-sort-a-java-hashmap-by-value
